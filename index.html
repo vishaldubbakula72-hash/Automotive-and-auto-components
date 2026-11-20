@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AutoCore Precision | Smarter Components. Stronger Tomorrow.</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{crimson:{400:'#F87171',500:'#DC2626',600:'#C81E1E',700:'#B91C1C',800:'#9E0B0F',900:'#7F090C',950:'#450507'},amberforge:{500:'#F59E0B',600:'#D97706',700:'#B45309'},obsidian:{800:'#1E293B',900:'#0F172A',950:'#080D1A'}}}}};
+</script>
+<style type="text/tailwindcss">
+@layer components{
+.inp{@apply w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-500}
+.lbl{@apply block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5}
+.card{@apply bg-white rounded-2xl border border-slate-200 shadow-sm p-5}
+.lin{@apply w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-crimson-700}
+}
+</style>
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.blueprint-grid{background-color:#0B1221;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to right,rgba(185,28,28,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(185,28,28,.12) 1px,transparent 1px);background-size:20px 20px,20px 20px,100px 100px,100px 100px}
+@keyframes scanline{0%{transform:translateY(0);opacity:.2}50%{opacity:.95}100%{transform:translateY(260px);opacity:.2}}
+.scanner-beam{animation:scanline 2.4s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes pulseRing{0%{transform:scale(.92);opacity:.85}70%{transform:scale(1.25);opacity:0}100%{transform:scale(1.25);opacity:0}}
+.defect-pulse{transform-origin:center;transform-box:fill-box;animation:pulseRing 1.8s infinite}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+<div id="toasts" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-full px-4 sm:px-0"></div>
+
+<!-- AUTH -->
+<section id="authView" class="min-h-screen flex flex-col lg:flex-row bg-obsidian-950 text-white">
+  <div class="lg:w-7/12 relative overflow-hidden flex flex-col justify-between gap-8 p-8 sm:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-800 blueprint-grid">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-crimson-800/25 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-crimson-700 to-crimson-900 border border-crimson-500/40 flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/><path d="M12 7v2M12 15v2M7 12h2M15 12h2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2"><span class="font-extrabold text-xl">AUTOCORE</span><span class="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-crimson-800/60 border border-crimson-600/40 text-amber-300">PRECISION</span></div>
+          <p class="text-xs text-slate-400">Industrial Quality &amp; Component Intelligence</p>
+        </div>
+      </div>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-xs text-slate-300"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Sreenidhi Institute Venture Prototype • v1.0</div>
+    </div>
+    <div class="relative z-10 max-w-2xl">
+      <div class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-4">Quality <span class="text-slate-600">|</span> Efficiency <span class="text-slate-600">|</span> Growth</div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.12]">Smarter Components.<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-crimson-400">Stronger Tomorrow.</span></h1>
+      <p class="mt-5 text-slate-300 sm:text-lg leading-relaxed">Empowering small and medium-sized automotive &amp; auto-component manufacturers to eliminate surface and dimensional defects, streamline CAD/CAM tolerances, and reduce production waste.</p>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800"><div class="text-xs font-mono uppercase text-slate-400">India Sector Turnover</div><div class="mt-1 text-xl font-bold font-mono">₹6.73 Lakh Cr</div><div class="mt-1 text-xs text-emerald-400">+9.6% YoY (ACMA)</div></div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800"><div class="text-xs font-mono uppercase text-slate-400">Target Defect Reduction</div><div class="mt-1 text-xl font-bold font-mono text-amber-400">-42.8%</div><div class="mt-1 text-xs text-slate-400">Automated Optical &amp; CAD QC</div></div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800"><div class="text-xs font-mono uppercase text-slate-400">SME SaaS Entry Tier</div><div class="mt-1 text-xl font-bold font-mono">₹499<span class="text-xs text-slate-400 font-normal">/mo</span></div><div class="mt-1 text-xs text-emerald-400">Month 4 Break-Even</div></div>
+      </div>
+    </div>
+    <div class="relative z-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-400">
+      <div><span class="text-slate-300 font-semibold">Venture Team (ECE):</span> T. Pranay • C. Ganesh • Angoth Prakash</div>
+      <div class="font-mono text-slate-500">Sreenidhi Institute of Science &amp; Technology, Hyderabad</div>
+    </div>
+  </div>
+
+  <div class="lg:w-5/12 flex items-center justify-center p-6 sm:p-12 bg-slate-950">
+    <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-2xl p-7 sm:p-9 shadow-2xl">
+      <div class="flex p-1 rounded-xl bg-slate-950 border border-slate-800 mb-7">
+        <button id="tabSignIn" type="button" onclick="switchAuthTab('signin')" class="flex-1 py-2.5 text-sm font-semibold rounded-lg bg-crimson-800 text-white">Executive Sign In</button>
+        <button id="tabSignUp" type="button" onclick="switchAuthTab('signup')" class="flex-1 py-2.5 text-sm font-semibold rounded-lg text-slate-400">Register Facility</button>
+      </div>
+      <h2 id="authHeading" class="text-xl font-bold">Access Manufacturing Command</h2>
+      <p id="authSub" class="text-sm text-slate-400 mt-1 mb-6">Sign in to inspect components, audit batch tolerances, and manage OEM specifications.</p>
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+        <div id="signUpFields" class="hidden space-y-4">
+          <div><label class="lbl">Full Name / Engineer Lead</label><input id="regName" class="inp" placeholder="e.g., Rahul Kumar" /></div>
+          <div><label class="lbl">Manufacturing Unit / Organization</label><input id="regOrg" class="inp" placeholder="e.g., Deccan Precision Auto Components" /></div>
+        </div>
+        <div><label class="lbl">Operational Role</label>
+          <select id="authRole" class="inp"><option>Plant Quality &amp; Inspection Lead</option><option>SME Auto-Component Manufacturer</option><option>OEM Procurement &amp; QA Partner</option></select></div>
+        <div><label class="lbl">Corporate / Plant Email</label><input id="authEmail" type="email" required value="qa.lead@autocore-precision.in" class="inp" /></div>
+        <div><label class="lbl">Access Passkey</label><input id="authPassword" type="password" required value="••••••••••••" class="inp" /></div>
+        <button id="authBtn" class="w-full py-3 rounded-xl bg-gradient-to-r from-crimson-800 to-crimson-700 text-white font-semibold text-sm">Enter Command Center →</button>
+      </form>
+      <div class="mt-6 pt-5 border-t border-slate-800">
+        <button type="button" onclick="quickDemoLogin()" class="w-full py-2.5 rounded-xl bg-slate-800 border border-amber-500/40 text-amber-300 font-medium text-xs uppercase tracking-wider">⚡ Instant Evaluator Demo Access</button>
+        <p class="text-[11px] text-slate-500 text-center mt-3">Prototype scope: Auth, Command Dashboard, Optical Defect QC, Component Catalog &amp; SaaS ROI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="appShell" class="hidden min-h-screen flex flex-col">
+  <header class="sticky top-0 z-30 bg-obsidian-950 text-white border-b border-slate-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('dashboard')">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-crimson-700 to-crimson-900 border border-crimson-500/40 flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <span class="font-bold tracking-tight">AutoCore Precision</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <button data-nav="dashboard" onclick="navigateTo('dashboard')" class="nav-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold">Command Dashboard</button>
+        <button data-nav="inspector" onclick="navigateTo('inspector')" class="nav-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold">AI Defect &amp; CAD Inspector</button>
+        <button data-nav="catalog" onclick="navigateTo('catalog')" class="nav-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold">Component Catalog</button>
+        <button data-nav="financials" onclick="navigateTo('financials')" class="nav-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold">SME ROI Model</button>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button onclick="navigateTo('catalog')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs">RFQ <span id="rfqCount" class="px-1.5 py-0.5 text-[11px] font-mono font-bold rounded bg-amberforge-600">0</span></button>
+        <div class="hidden lg:flex flex-col text-right"><span id="hName" class="text-xs font-semibold"></span><span id="hRole" class="text-[11px] text-slate-400"></span></div>
+        <button onclick="logoutUser()" title="Sign out" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">⎋</button>
+      </div>
+    </div>
+    <div class="md:hidden border-t border-slate-800 bg-slate-900 px-3 py-2 flex overflow-x-auto gap-2">
+      <button data-nav="dashboard" onclick="navigateTo('dashboard')" class="nav-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold">Dashboard</button>
+      <button data-nav="inspector" onclick="navigateTo('inspector')" class="nav-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold">AI Defect QC</button>
+      <button data-nav="catalog" onclick="navigateTo('catalog')" class="nav-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold">Catalog</button>
+      <button data-nav="financials" onclick="navigateTo('financials')" class="nav-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold">ROI &amp; Pricing</button>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8">
+
+    <!-- DASHBOARD -->
+    <div id="view-dashboard" class="space-y-6">
+      <div class="rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-crimson-950 text-white p-6 sm:p-8 border border-slate-800">
+        <p class="text-xs font-mono uppercase tracking-widest text-amber-400">Plant Command Center</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold mt-1">Welcome, <span id="wName"></span></h2>
+        <p class="text-slate-300 text-sm mt-2 max-w-2xl">Live overview of inspection yield, tolerance compliance and open OEM quotes for your facility.</p>
+        <div class="mt-5 flex flex-wrap gap-2"><button onclick="navigateTo('inspector')" class="px-4 py-2 rounded-xl bg-crimson-700 text-sm font-semibold">Run Defect Scan</button><button onclick="navigateTo('catalog')" class="px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-sm font-semibold">Browse Catalog</button></div>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card"><p class="text-xs text-slate-500">Inspection Yield</p><p class="text-2xl font-bold font-mono mt-1">97.4%</p><p class="text-xs text-emerald-600">▲ 2.1% this week</p></div>
+        <div class="card"><p class="text-xs text-slate-500">Defects Caught</p><p class="text-2xl font-bold font-mono mt-1">128</p><p class="text-xs text-emerald-600">▼ 42.8% vs baseline</p></div>
+        <div class="card"><p class="text-xs text-slate-500">Tolerance Compliance</p><p class="text-2xl font-bold font-mono mt-1">99.1%</p><p class="text-xs text-slate-500">IATF-16949 aligned</p></div>
+        <div class="card"><p class="text-xs text-slate-500">Waste Saved</p><p class="text-2xl font-bold font-mono mt-1">₹1.8L</p><p class="text-xs text-emerald-600">this month</p></div>
+      </div>
+      <div class="grid lg:grid-cols-5 gap-4">
+        <div class="card lg:col-span-3"><h3 class="font-bold mb-4">Weekly Defect Rate (%)</h3><div id="bars" class="flex items-end gap-3 h-40"></div></div>
+        <div class="card lg:col-span-2 overflow-x-auto"><h3 class="font-bold mb-3">Recent Batches</h3>
+          <table class="w-full text-sm"><thead class="text-xs text-slate-500 text-left"><tr><th class="pb-2">Batch</th><th>Part</th><th>Status</th></tr></thead><tbody id="batches"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- INSPECTOR -->
+    <div id="view-inspector" class="hidden space-y-6">
+      <div><h2 class="text-2xl font-extrabold">AI Defect &amp; CAD Inspector</h2><p class="text-sm text-slate-500">Run an optical surface scan and verify dimensions against CAD tolerance.</p></div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="card">
+          <div class="blueprint-grid rounded-xl overflow-hidden relative" style="height:300px">
+            <svg viewBox="0 0 300 300" class="w-full h-full absolute inset-0">
+              <circle cx="150" cy="150" r="95" fill="#1E293B" stroke="#64748B" stroke-width="3"/>
+              <circle cx="150" cy="150" r="35" fill="#0B1221" stroke="#94A3B8" stroke-width="2"/>
+              <g stroke="#475569" stroke-width="10" stroke-linecap="round"><path d="M150 40v20M150 240v20M40 150h20M240 150h20M72 72l14 14M214 214l14 14M72 228l14-14M214 86l14-14"/></g>
+              <g id="defects" class="hidden"><circle cx="205" cy="105" r="9" fill="none" stroke="#EF4444" stroke-width="3"/><circle class="defect-pulse" cx="205" cy="105" r="9" fill="#EF4444"/><circle cx="105" cy="205" r="9" fill="none" stroke="#F59E0B" stroke-width="3"/><circle class="defect-pulse" cx="105" cy="205" r="9" fill="#F59E0B"/></g>
+              <rect id="beam" class="scanner-beam hidden" x="40" y="30" width="220" height="4" fill="#F59E0B"/>
+            </svg>
+          </div>
+          <button id="scanBtn" onclick="runScan()" class="mt-4 w-full py-3 rounded-xl bg-crimson-700 text-white font-semibold text-sm">▶ Start Optical Scan</button>
+          <div id="scanOut" class="mt-3 text-sm text-slate-600">Ready. Press Start to scan the gear blank.</div>
+        </div>
+        <div class="card space-y-3">
+          <h3 class="font-bold">CAD Tolerance Check</h3>
+          <div><label class="text-xs font-semibold text-slate-500">Nominal dimension (mm)</label><input id="tNom" type="number" step="0.001" value="50.000" class="lin mt-1" /></div>
+          <div><label class="text-xs font-semibold text-slate-500">Tolerance ± (mm)</label><input id="tTol" type="number" step="0.001" value="0.025" class="lin mt-1" /></div>
+          <div><label class="text-xs font-semibold text-slate-500">Measured value (mm)</label><input id="tMeas" type="number" step="0.001" value="50.031" class="lin mt-1" /></div>
+          <button onclick="checkTol()" class="w-full py-2.5 rounded-xl bg-obsidian-900 text-white text-sm font-semibold">Verify Dimension</button>
+          <div id="tolOut" class="p-3 rounded-xl bg-slate-100 text-sm text-slate-600">Enter values and verify.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATALOG -->
+    <div id="view-catalog" class="hidden space-y-6">
+      <div><h2 class="text-2xl font-extrabold">Durable Component Catalog</h2><p class="text-sm text-slate-500">Add parts to your OEM request-for-quote batch.</p></div>
+      <div id="catGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+
+    <!-- FINANCIALS -->
+    <div id="view-financials" class="hidden space-y-6">
+      <div><h2 class="text-2xl font-extrabold">SME ROI &amp; Venture Model</h2><p class="text-sm text-slate-500">Estimate monthly savings using the targeted 42.8% defect reduction.</p></div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="card space-y-3">
+          <div><label class="text-xs font-semibold text-slate-500">Units produced / month</label><input id="rU" type="number" value="20000" oninput="calcROI()" class="lin mt-1" /></div>
+          <div><label class="text-xs font-semibold text-slate-500">Current defect rate (%)</label><input id="rD" type="number" step="0.1" value="4" oninput="calcROI()" class="lin mt-1" /></div>
+          <div><label class="text-xs font-semibold text-slate-500">Cost per unit (₹)</label><input id="rC" type="number" value="350" oninput="calcROI()" class="lin mt-1" /></div>
+          <div id="roiOut" class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-sm"></div>
+        </div>
+        <div class="grid gap-4">
+          <div class="card"><p class="text-xs font-mono uppercase text-slate-500">Starter</p><p class="text-2xl font-bold">₹499<span class="text-sm font-normal text-slate-500">/mo</span></p><p class="text-sm text-slate-600 mt-1">1 line • optical QC • basic reports</p></div>
+          <div class="card border-crimson-700"><p class="text-xs font-mono uppercase text-crimson-700">Growth</p><p class="text-2xl font-bold">₹1,999<span class="text-sm font-normal text-slate-500">/mo</span></p><p class="text-sm text-slate-600 mt-1">5 lines • CAD tolerance • OEM RFQ tools</p></div>
+          <div class="card"><p class="text-xs font-mono uppercase text-slate-500">Enterprise</p><p class="text-2xl font-bold">Custom</p><p class="text-sm text-slate-600 mt-1">Multi-plant • API • dedicated support</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let rfq=new Set();
+const PARTS=[
+["Forged Crankshaft Pin","42CrMo4 steel","±0.010 mm","MOQ 500","₹420"],
+["Brake Caliper Piston","Aluminium alloy","±0.015 mm","MOQ 300","₹610"],
+["Precision Gear Set","20MnCr5 case-hardened","±0.008 mm","MOQ 200","₹1,150"],
+["Turbo Housing","Cast iron GJS-500","±0.050 mm","MOQ 100","₹2,300"],
+["Wheel Hub Bearing","52100 chrome steel","±0.005 mm","MOQ 400","₹890"],
+["Fuel Injector Nozzle","Stainless 440C","±0.003 mm","MOQ 250","₹1,480"]];
+const BATCH=[["B-2041","Gear Set","Pass"],["B-2042","Piston","Review"],["B-2043","Crank Pin","Pass"],["B-2044","Nozzle","Pass"],["B-2045","Hub Bearing","Fail"]];
+const WEEK=[5.8,5.1,4.6,3.9,3.4,3.1,2.9];
+
+function toast(msg,type){const t=document.createElement('div');t.className='pointer-events-auto px-4 py-3 rounded-xl shadow-lg text-sm font-medium text-white '+(type=='err'?'bg-crimson-700':'bg-obsidian-900 border border-slate-700');t.textContent=msg;$('toasts').appendChild(t);setTimeout(()=>t.remove(),3000)}
+
+function switchAuthTab(m){const up=m=='signup';$('signUpFields').classList.toggle('hidden',!up);$('tabSignIn').className='flex-1 py-2.5 text-sm font-semibold rounded-lg '+(up?'text-slate-400':'bg-crimson-800 text-white');$('tabSignUp').className='flex-1 py-2.5 text-sm font-semibold rounded-lg '+(up?'bg-crimson-800 text-white':'text-slate-400');$('authHeading').textContent=up?'Register Your Facility':'Access Manufacturing Command';$('authSub').textContent=up?'Create an account for your plant to start inspecting components.':'Sign in to inspect components, audit batch tolerances, and manage OEM specifications.';$('authBtn').textContent=up?'Create Account →':'Enter Command Center →'}
+function enter(name,role){$('authView').classList.add('hidden');$('appShell').classList.remove('hidden');$('hName').textContent=name;$('hRole').textContent=role;$('wName').textContent=name;navigateTo('dashboard');toast('Signed in as '+name)}
+function handleAuthSubmit(e){e.preventDefault();const up=!$('signUpFields').classList.contains('hidden');const n=$('regName').value.trim();if(up&&!n){toast('Please enter your full name','err');return}enter(up?n:($('authEmail').value.split('@')[0]||'Engineer'),$('authRole').value)}
+function quickDemoLogin(){enter('Rahul Kumar','Plant Quality & Inspection Lead')}
+function logoutUser(){$('appShell').classList.add('hidden');$('authView').classList.remove('hidden');toast('Signed out')}
+
+function navigateTo(v){['dashboard','inspector','catalog','financials'].forEach(x=>$('view-'+x).classList.toggle('hidden',x!=v));document.querySelectorAll('.nav-btn').forEach(b=>{const on=b.dataset.nav==v;b.classList.toggle('bg-crimson-800',on);b.classList.toggle('text-white',on);b.classList.toggle('text-slate-300',!on)});window.scrollTo(0,0)}
+
+function drawDash(){const mx=Math.max(...WEEK);$('bars').innerHTML=WEEK.map((v,i)=>'<div class="flex-1 flex flex-col items-center justify-end h-full"><span class="text-[10px] font-mono text-slate-500">'+v+'</span><div class="w-full rounded-t bg-gradient-to-t from-crimson-800 to-crimson-500" style="height:'+(v/mx*100*.8)+'%"></div><span class="text-[10px] text-slate-400 mt-1">W'+(i+1)+'</span></div>').join('');
+$('batches').innerHTML=BATCH.map(b=>'<tr class="border-t border-slate-100"><td class="py-2 font-mono text-xs">'+b[0]+'</td><td>'+b[1]+'</td><td><span class="text-xs font-semibold px-2 py-0.5 rounded-full '+(b[2]=='Pass'?'bg-emerald-100 text-emerald-700':b[2]=='Fail'?'bg-rose-100 text-rose-700':'bg-amber-100 text-amber-700')+'">'+b[2]+'</span></td></tr>').join('')}
+
+function runScan(){const btn=$('scanBtn');btn.disabled=true;btn.textContent='Scanning…';$('defects').classList.add('hidden');$('beam').classList.remove('hidden');$('scanOut').textContent='Optical scan in progress…';
+setTimeout(()=>{$('beam').classList.add('hidden');$('defects').classList.remove('hidden');btn.disabled=false;btn.textContent='▶ Scan Again';$('scanOut').innerHTML='<b class="text-crimson-700">2 defects found:</b> 1 surface crack (critical), 1 pit (minor). Recommend rework before dispatch.';toast('Scan complete: 2 defects')},3000)}
+function checkTol(){const n=+$('tNom').value,t=+$('tTol').value,m=+$('tMeas').value,d=m-n,ok=Math.abs(d)<=t;$('tolOut').className='p-3 rounded-xl text-sm '+(ok?'bg-emerald-50 text-emerald-800 border border-emerald-200':'bg-rose-50 text-rose-800 border border-rose-200');$('tolOut').innerHTML=(ok?'✅ <b>Within tolerance.</b>':'❌ <b>Out of tolerance.</b>')+' Deviation '+(d>=0?'+':'')+d.toFixed(3)+' mm (limit ±'+t.toFixed(3)+' mm).'}
+
+function drawCat(){$('catGrid').innerHTML=PARTS.map((p,i)=>'<div class="card flex flex-col"><div class="h-24 rounded-xl blueprint-grid mb-3 flex items-center justify-center text-4xl">⚙️</div><h3 class="font-bold">'+p[0]+'</h3><p class="text-xs text-slate-500 mt-1">'+p[1]+' • Tol '+p[2]+'</p><p class="text-xs text-slate-500">'+p[3]+'</p><div class="mt-3 flex items-center justify-between"><span class="font-mono font-bold">'+p[4]+'</span><button onclick="toggleRfq('+i+')" id="rb'+i+'" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-obsidian-900 text-white">Add to RFQ</button></div></div>').join('')}
+function toggleRfq(i){const b=$('rb'+i);if(rfq.has(i)){rfq.delete(i);b.textContent='Add to RFQ';b.className='px-3 py-1.5 rounded-lg text-xs font-semibold bg-obsidian-900 text-white'}else{rfq.add(i);b.textContent='✓ Added';b.className='px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white';toast(PARTS[i][0]+' added to RFQ')}$('rfqCount').textContent=rfq.size}
+
+function calcROI(){const u=+$('rU').value,d=+$('rD').value/100,c=+$('rC').value,bad=u*d,saved=bad*.428,rs=saved*c,net=rs-499;$('roiOut').innerHTML='Defective units now: <b>'+Math.round(bad).toLocaleString('en-IN')+'</b><br>Units saved (−42.8%): <b>'+Math.round(saved).toLocaleString('en-IN')+'</b><br>Monthly saving: <b class="text-emerald-700">₹'+Math.round(rs).toLocaleString('en-IN')+'</b><br>Net after ₹499 plan: <b>₹'+Math.round(net).toLocaleString('en-IN')+'</b>'}
+
+drawDash();drawCat();calcROI();
+</script>
+</body>
+</html>
